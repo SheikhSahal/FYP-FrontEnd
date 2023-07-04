@@ -187,24 +187,30 @@ function Detect() {
 
                 console.log(uniQueEntry , time);
 
-                const submit = (a,b,c) => {
+                const submit = (a,b,c,d,e) => {
                   Axios.post('https://tame-teal-firefly-wig.cyclic.app/api',{
                     User : a,
                     IO_Date : b,
                     IO_time : c,
-                    long : 'lng',
-                    lati : 'lat'
+                    long : d,
+                    lati : e
                   })
                 };
 
   // const [lat, setLat] = useState(null);
   // const [lng, setLng] = useState(null);
   // const [status, setStatus] = useState(null);
-
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(function(position) {
+        console.log("Latitude is :", position.coords.latitude);
+        console.log("Longitude is :", position.coords.longitude);
+        submit(name,uniQueEntry, time, position.coords.longitude , position.coords.latitude);
+      });
+    }
              
 
              console.log(lat); 
-                submit(name,uniQueEntry, time);
+                //submit(name,uniQueEntry, time);
 
               // check if the user is doing 1st entry at 9-12
               if (currentDate >= 9 && currentDate <= 12) {
