@@ -187,16 +187,7 @@ function Detect() {
 
                 console.log(uniQueEntry , time);
 
-                const submit = (a,b,c) => {
-                  Axios.post('https://tame-teal-firefly-wig.cyclic.app/api',{
-                    User : a,
-                    IO_Date : b,
-                    IO_time : c,
-                    long : 'lng',
-                    lati : 'lat'
-                  })
-  
-                };
+            
 
   // const [lat, setLat] = useState(null);
   // const [lng, setLng] = useState(null);
@@ -211,6 +202,15 @@ function Detect() {
                             setStatus(null);
                             setLat(position.coords.latitude);
                             setLng(position.coords.longitude);
+                            const submit = (a,b,c) => {
+                              Axios.post('https://tame-teal-firefly-wig.cyclic.app/api',{
+                                User : a,
+                                IO_Date : b,
+                                IO_time : c,
+                                long : position.coords.longitude,
+                                lati : position.coords.latitude
+                              })
+                            };
                        }, () => {
                             setStatus('Unable to retrieve your location');
                        });
