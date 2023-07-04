@@ -197,8 +197,8 @@ function Detect() {
               User : a,
               IO_Date : b,
               IO_time : c,
-              long : position.coords.longitude,
-              lati : position.coords.latitude
+              long : 'position',
+              lati : 'latitude'
               })
 
              console.log(lat); 
