@@ -220,7 +220,7 @@ function Detect() {
   }
 
   getLocation(function(lat_lng){
-    ubmit(name,uniQueEntry, time, lat_lng.lng , lat_lng.lat);
+    submit(name,uniQueEntry, time, lat_lng.lng , lat_lng.lat);
     console.log(lat_lng);
   });
              
