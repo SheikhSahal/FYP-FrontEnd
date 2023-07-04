@@ -39,7 +39,7 @@ function Welcome() {
         </div>
         <br/>
         <br/>
-        <Footbt/>
+        {/* <Footbt/> */}
 
         {/* <div id="features" className="rows">
           <div className="cols">
