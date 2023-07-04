@@ -43,6 +43,10 @@ h1 {
   font-weight: 800;
 }
 
+.heading2{
+  color: wheat;
+}
+
 .navbar {
   padding-bottom: 4.5rem;
   padding-left: 0;

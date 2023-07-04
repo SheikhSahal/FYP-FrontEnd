@@ -29,8 +29,8 @@ function Welcome() {
         />
       <div className="poster">
         <div className="about">
-          <h2>Touchless Face recognition based Employee Attendance</h2>
-          <h6>
+          <h2 className="heading2">Touchless Face recognition based Employee Attendance</h2>
+          <h6 className="heading2">
             In current times, a safe Touchless entry for your employee is an
             important safety measure And,here we present you with our online
             face recognition attendance marking system {tagline} It's a robust,
@@ -41,7 +41,7 @@ function Welcome() {
         <br/>
         <Footbt/>
 
-        <div id="features" className="rows">
+        {/* <div id="features" className="rows">
           <div className="cols">
             <div className="cards">
               <h3>Face recognition based</h3>
@@ -67,7 +67,7 @@ function Welcome() {
               <p>Half day mark, Over time, Long absence alerts and more.</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       {/* <div className="video">
         <video width={350} height={300} controls>
