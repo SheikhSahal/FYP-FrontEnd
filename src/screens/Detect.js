@@ -193,29 +193,13 @@ function Detect() {
   // const [lng, setLng] = useState(null);
   // const [status, setStatus] = useState(null);
 
-                const getLocation = () => {
-                  if (!navigator.geolocation) {
-                       setStatus('Geolocation is not supported by your browser');
-                  } else {
-                       setStatus('Locating...');
-                       navigator.geolocation.getCurrentPosition((position) => {
-                            setStatus(null);
-                            setLat(position.coords.latitude);
-                            setLng(position.coords.longitude);
-                            const submit = (a,b,c) => {
-                              Axios.post('https://tame-teal-firefly-wig.cyclic.app/api',{
-                                User : a,
-                                IO_Date : b,
-                                IO_time : c,
-                                long : position.coords.longitude,
-                                lati : position.coords.latitude
-                              })
-                            };
-                       }, () => {
-                            setStatus('Unable to retrieve your location');
-                       });
-                  }
-             }
+              Axios.post('https://tame-teal-firefly-wig.cyclic.app/api',{
+              User : a,
+              IO_Date : b,
+              IO_time : c,
+              long : position.coords.longitude,
+              lati : position.coords.latitude
+              })
 
              console.log(lat); 
                 submit(name,uniQueEntry, time);
