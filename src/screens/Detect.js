@@ -191,7 +191,9 @@ function Detect() {
                   Axios.post('https://tame-teal-firefly-wig.cyclic.app/api',{
                     User : a,
                     IO_Date : b,
-                    IO_time : c
+                    IO_time : c,
+                    long : lng,
+                    lati : lat
                   })
   
                 };
