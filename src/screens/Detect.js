@@ -31,6 +31,9 @@ function Detect() {
 
   const [dbtime , setdbtime] = useState();
   const [dbdate , setdbdate] = useState();
+  const [lat, setLat] = useState(null);
+  const [lng, setLng] = useState(null);
+  const [status, setStatus] = useState(null);
 
   // const [openSnackBar, setOpenSnackBar] = useState(false);
 
@@ -192,7 +195,27 @@ function Detect() {
                   })
   
                 };
-              
+
+  // const [lat, setLat] = useState(null);
+  // const [lng, setLng] = useState(null);
+  // const [status, setStatus] = useState(null);
+
+                const getLocation = () => {
+                  if (!navigator.geolocation) {
+                       setStatus('Geolocation is not supported by your browser');
+                  } else {
+                       setStatus('Locating...');
+                       navigator.geolocation.getCurrentPosition((position) => {
+                            setStatus(null);
+                            setLat(position.coords.latitude);
+                            setLng(position.coords.longitude);
+                       }, () => {
+                            setStatus('Unable to retrieve your location');
+                       });
+                  }
+             }
+
+             console.log(lat); 
                 submit(name,uniQueEntry, time);
 
               // check if the user is doing 1st entry at 9-12
