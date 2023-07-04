@@ -11,7 +11,8 @@ html {
 .bg-img {
   /* The image used */
   /**background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdST08B3wUL_Cnicy9WhpkXbaj6dyV9DsoPw&usqp=CAU");**/
-  background-image: url("https://freedesignfile.com/upload/2017/08/White-office-space-meeting-room-table-Stock-Photo-12.jpg");
+  /* background-image: url("https://freedesignfile.com/upload/2017/08/White-office-space-meeting-room-table-Stock-Photo-12.jpg"); */
+  background-image: url("https://t4.ftcdn.net/jpg/02/87/07/13/360_F_287071353_WXFljgcyA6kHEniBIKCyqRYaviBZTS4p.jpg");
   height: 25em;
   text-align: center;
   background-position: center center;
