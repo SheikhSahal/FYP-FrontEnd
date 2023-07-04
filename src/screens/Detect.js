@@ -192,8 +192,8 @@ function Detect() {
                     User : a,
                     IO_Date : b,
                     IO_time : c,
-                    long : lng,
-                    lati : lat
+                    long : 'lng',
+                    lati : 'lat'
                   })
   
                 };
