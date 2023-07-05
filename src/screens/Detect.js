@@ -198,29 +198,30 @@ function Detect() {
                 };
 
   
-    // if (navigator.geolocation) {
-    //   navigator.geolocation.watchPosition(function(position) {
-    //     console.log("Latitude is :", position.coords.latitude);
-    //     console.log("Longitude is :", position.coords.longitude);
-    //     submit(name,uniQueEntry, time, position.coords.longitude , position.coords.latitude);
-    //   });
-    // }
-    function getLocation(callback) {
-      if (navigator.geolocation) {
-          var lat_lng = navigator.geolocation.getCurrentPosition(function(position){
-          console.log(position);
-            var user_position = {};
-            user_position.lat = position.coords.latitude; 
-            user_position.lng = position.coords.longitude; 
-            callback(user_position);
-          })
-      }
-  }
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(function(position) {
+        console.log("Latitude is :", position.coords.latitude);
+        console.log("Longitude is :", position.coords.longitude);
+        submit(name,uniQueEntry, time, position.coords.longitude , position.coords.latitude);
+      });
+    }
 
-  getLocation(function(lat_lng){
-    submit(name,uniQueEntry, time, lat_lng.lng , lat_lng.lat);
-    console.log(lat_lng);
-  });
+  //   function getLocation(callback) {
+  //     if (navigator.geolocation) {
+  //         var lat_lng = navigator.geolocation.getCurrentPosition(function(position){
+  //         console.log(position);
+  //           var user_position = {};
+  //           user_position.lat = position.coords.latitude; 
+  //           user_position.lng = position.coords.longitude; 
+  //           callback(user_position);
+  //         })
+  //     }
+  // }
+
+  // getLocation(function(lat_lng){
+  //   submit(name,uniQueEntry, time, lat_lng.lng , lat_lng.lat);
+  //   console.log(lat_lng);
+  // });
              
 
              console.log(lat); 
