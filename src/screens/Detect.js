@@ -213,9 +213,7 @@ function Detect() {
             user_position.lat = position.coords.latitude; 
             user_position.lng = position.coords.longitude; 
             callback(user_position);
-          });
-      } else {
-          alert("Geolocation is not supported by this browser.");
+          })
       }
   }
 
