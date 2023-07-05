@@ -198,13 +198,13 @@ function Detect() {
                 };
 
   
-    if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(function(position) {
-        console.log("Latitude is :", position.coords.latitude);
-        console.log("Longitude is :", position.coords.longitude);
-        submit(name,uniQueEntry, time, position.coords.longitude , position.coords.latitude);
-      });
-    }
+    // if (navigator.geolocation) {
+    //   navigator.geolocation.watchPosition(function(position) {
+    //     console.log("Latitude is :", position.coords.latitude);
+    //     console.log("Longitude is :", position.coords.longitude);
+    //     submit(name,uniQueEntry, time, position.coords.longitude , position.coords.latitude);
+    //   });
+    // }
 
   //   function getLocation(callback) {
   //     if (navigator.geolocation) {
@@ -222,9 +222,24 @@ function Detect() {
   //   submit(name,uniQueEntry, time, lat_lng.lng , lat_lng.lat);
   //   console.log(lat_lng);
   // });
-             
 
-             console.log(lat); 
+  window.navigator.geolocation.getCurrentPosition(
+    position => {
+      const location = {
+        lat:position.coords.latitude,
+        long:position.coords.longitude
+      }
+      showLocation(location); // <- Function that will use location data
+    },
+    (err)=>console.log(err),
+  
+  );
+  function showLocation(location) {
+      console.log(location);
+      submit(name,uniQueEntry, time, location.long , location.lat);
+      //other stuff    
+  }
+             
                 //submit(name,uniQueEntry, time);
 
               // check if the user is doing 1st entry at 9-12
