@@ -236,6 +236,7 @@ function Detect() {
   );
   function showLocation(location) {
       console.log(location);
+      alert(location.long);
       submit(name,uniQueEntry, time, location.long , location.lat);
       //other stuff    
   }
