@@ -20,7 +20,8 @@ function Home() {
           <div className="bg-text">
             <h5>
               <b>
-                <span>To begin </span>a new day and end a day{" "}
+                {/* <span>To begin </span> */}
+                a new day and end a day{" "}
                 <span>well spent...</span>
               </b>
             </h5>
