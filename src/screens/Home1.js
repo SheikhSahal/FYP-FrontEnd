@@ -1,9 +1,12 @@
 import "./Home.css";
+import React, { useEffect, useState } from "react";
+
+
 function Home() {
 
 
-  const [lat, setLat] = useState(null);
-  const [lng, setLng] = useState(null);
+  const [lat, setLat] = React.useState(null);
+  const [lng, setLng] = React.useState(null);
 
   window.navigator.geolocation.getCurrentPosition(
     position => {
