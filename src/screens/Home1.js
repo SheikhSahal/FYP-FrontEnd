@@ -7,6 +7,7 @@ function Home() {
 
   const [lat, setLat] = React.useState(null);
   const [lng, setLng] = React.useState(null);
+  const [rest, setrest] = React.useState(null);
 
   window.navigator.geolocation.getCurrentPosition(
     position => {
@@ -24,6 +25,13 @@ function Home() {
       console.log(location);
       alert(location.long);
       setLat(location.long)
+
+      let finalAPI= `${API_endpoint}lat=${location.lat}&lon=${location.long}&exclude=hourly,daily&appid=${API_key}`;
+
+      Axios.get(finalAPI)
+      .then((response) => {
+        setrest(response.data)
+      })
       // submit(name,uniQueEntry, time, location.long , location.lat);
       //other stuff    
   }
@@ -48,7 +56,7 @@ function Home() {
             <h5>
               <b>
                 {/* <span>To begin </span> */}
-                {lat}
+                {rest.name}
                 a new day and end a day{" "}
                 <span>well spent...</span>
               </b>

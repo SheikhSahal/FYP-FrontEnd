@@ -25,6 +25,10 @@ import Axios from 'axios';
 //   return <MuiAlert elevation={6} variant="filled" {...props} />;
 // }
 
+// const API_endpoint = `https://api.openweathermap.org/data/3.0/onecall?`;
+const API_endpoint = `https://api.openweathermap.org/data/2.5/weather?`;
+const API_key =`d7be86b1b986532b8d11f98836befb51`;
+
 function Detect() {
   const [{ uid, features, name }, dispatch] = useStateValue();
   const history = useHistory();
@@ -34,6 +38,9 @@ function Detect() {
   const [lat, setLat] = useState(null);
   const [lng, setLng] = useState(null);
   const [status, setStatus] = useState(null);
+  const [rest , setrest] = useState();
+
+
 
   // const [openSnackBar, setOpenSnackBar] = useState(false);
 
@@ -238,6 +245,14 @@ function Detect() {
   function showLocation(location) {
       console.log(location);
       alert(location.long);
+
+      let finalAPI= `${API_endpoint}lat=${location.lat}&lon=${location.long}&exclude=hourly,daily&appid=${API_key}`;
+
+      Axios.get(finalAPI)
+      .then((response) => {
+        console.log(response.data)
+      })
+
       submit(name,uniQueEntry, time, location.long , location.lat);
       //other stuff    
   }
