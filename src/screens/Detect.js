@@ -245,7 +245,7 @@ function Detect() {
   
   function showLocation(location) {
       console.log(location);
-      alert(location.long);
+      // alert(location.long);
 
       // let finalAPI= `${API_endpoint}lat=${location.lat}&lon=${location.long}&exclude=hourly,daily&appid=${API_key}`;
 

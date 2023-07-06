@@ -1,5 +1,6 @@
 import "./Home.css";
 import React, { useEffect, useState } from "react";
+import Axios from 'axios';
 
 const API_endpoint = `https://api.openweathermap.org/data/2.5/weather?`;
 const API_key =`d7be86b1b986532b8d11f98836befb51`;
@@ -25,7 +26,7 @@ function Home() {
   
   function showLocation(location) {
       console.log(location);
-      alert(location.long);
+      // alert(location.long);
       setLat(location.long)
 
       let finalAPI= `${API_endpoint}lat=${location.lat}&lon=${location.long}&exclude=hourly,daily&appid=${API_key}`;
@@ -58,7 +59,7 @@ function Home() {
             <h5>
               <b>
                 {/* <span>To begin </span> */}
-                {rest.name}
+                { JSON.stringify(rest) }
                 a new day and end a day{" "}
                 <span>well spent...</span>
               </b>
