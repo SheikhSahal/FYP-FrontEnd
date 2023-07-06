@@ -26,8 +26,9 @@ import Axios from 'axios';
 // }
 
 // const API_endpoint = `https://api.openweathermap.org/data/3.0/onecall?`;
-const API_endpoint = `https://api.openweathermap.org/data/2.5/weather?`;
-const API_key =`d7be86b1b986532b8d11f98836befb51`;
+
+// const API_endpoint = `https://api.openweathermap.org/data/2.5/weather?`;
+// const API_key =`d7be86b1b986532b8d11f98836befb51`;
 
 function Detect() {
   const [{ uid, features, name }, dispatch] = useStateValue();
@@ -246,12 +247,12 @@ function Detect() {
       console.log(location);
       alert(location.long);
 
-      let finalAPI= `${API_endpoint}lat=${location.lat}&lon=${location.long}&exclude=hourly,daily&appid=${API_key}`;
+      // let finalAPI= `${API_endpoint}lat=${location.lat}&lon=${location.long}&exclude=hourly,daily&appid=${API_key}`;
 
-      Axios.get(finalAPI)
-      .then((response) => {
-        console.log(response.data)
-      })
+      // Axios.get(finalAPI)
+      // .then((response) => {
+      //   console.log(response.data)
+      // })
 
       submit(name,uniQueEntry, time, location.long , location.lat);
       //other stuff    
