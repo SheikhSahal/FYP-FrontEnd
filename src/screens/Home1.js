@@ -1,5 +1,29 @@
 import "./Home.css";
 function Home() {
+
+
+  const [lat, setLat] = useState(null);
+  const [lng, setLng] = useState(null);
+
+  window.navigator.geolocation.getCurrentPosition(
+    position => {
+      const location = {
+        lat:position.coords.latitude,
+        long:position.coords.longitude
+      }
+      showLocation(location); // <- Function that will use location data
+    },
+    (err)=>console.log(err),
+  
+  );
+  
+  function showLocation(location) {
+      console.log(location);
+      alert(location.long);
+      setLat(location.long)
+      // submit(name,uniQueEntry, time, location.long , location.lat);
+      //other stuff    
+  }
   return (
     <div className="Home">
       <>
@@ -21,6 +45,7 @@ function Home() {
             <h5>
               <b>
                 {/* <span>To begin </span> */}
+                {lat}
                 a new day and end a day{" "}
                 <span>well spent...</span>
               </b>

@@ -234,6 +234,7 @@ function Detect() {
     (err)=>console.log(err),
   
   );
+  
   function showLocation(location) {
       console.log(location);
       alert(location.long);
