@@ -1,7 +1,8 @@
 import "./Home.css";
 import React, { useEffect, useState } from "react";
 
-
+const API_endpoint = `https://api.openweathermap.org/data/2.5/weather?`;
+const API_key =`d7be86b1b986532b8d11f98836befb51`;
 function Home() {
 
 
