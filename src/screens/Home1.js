@@ -30,7 +30,7 @@ function Home() {
   return (
     <div className="Home">
       <>
-        <title>Home Page yes</title>
+        <title>Home Page</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
