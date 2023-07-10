@@ -34,6 +34,7 @@ function Home() {
       Axios.get(finalAPI)
       .then((response) => {
         setrest(response.data)
+        console.log(response.data)
       })
       // submit(name,uniQueEntry, time, location.long , location.lat);
       //other stuff    
@@ -59,7 +60,7 @@ function Home() {
             <h5>
               <b>
                 {/* <span>To begin </span> */}
-                { JSON.stringify(rest) }
+                {/* { JSON.stringify(rest.name) } */}
                 a new day and end a day{" "}
                 <span>well spent...</span>
               </b>
