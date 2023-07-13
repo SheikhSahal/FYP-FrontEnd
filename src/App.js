@@ -14,6 +14,7 @@ import Enroll from "./screens/Enroll";
 import Detect from "./screens/Detect";
 import Signin from "./screens/Signin";
 import Signup from "./screens/Signup";
+import Leave from "./screens/Leaves";
 import About from "./screens/About";
 import FooterPage from "./components/Footer";
 import Head from "./components/Header";
@@ -94,9 +95,16 @@ function App() {
           {uid ? (
             <>
               {features && (
+                <div>
                 <Route exact path={routes.DETECT}>
                   <Detect />
+                  
                 </Route>
+                <Route exact path={routes.LEAVE}>
+                  <Leave />
+                  
+                </Route>
+                </div>
               )}
 
               {!features && (

@@ -37,7 +37,11 @@ function Head() {
                     <Link to={routes.DETECT} className="head_navlink">
                       Take Attendance
                     </Link>
+                    <Link to={routes.LEAVE} className="head_navlink">
+                     &nbsp;&nbsp;&nbsp; Leave
+                    </Link>
                   </Nav.Link>
+                  
                 ) : (
                   <Nav.Link>
                     <Link to={routes.ENROLL} className="head_navlink">

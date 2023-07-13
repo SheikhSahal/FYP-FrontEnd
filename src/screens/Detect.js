@@ -41,7 +41,7 @@ function Detect() {
   const [status, setStatus] = useState(null);
   const [rest , setrest] = useState();
   const [capturedFrame, setCapturedFrame] = useState(null);
-  const canvasRef = useRef(null);
+  
 
 
   // const [openSnackBar, setOpenSnackBar] = useState(false);
@@ -150,10 +150,10 @@ function Detect() {
           faceMatcher.findBestMatch(d.descriptor)
         );
 
-        const canvas = canvasRef.current;
-        canvas.getContext("2d").drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-        const frameDataURL = canvas.toDataURL("image/png");
-        setCapturedFrame(frameDataURL);
+        // const canvas = canvasRef.current;
+        // canvas.getContext("2d").drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+        // const frameDataURL = canvas.toDataURL("image/png");
+        // setCapturedFrame(frameDataURL);
 
         results.forEach((result, i) => {
           if (result.label === name) recogRes.push(true);
@@ -377,7 +377,7 @@ function Detect() {
 
       <div className="detect_vid">
         <video autoPlay={true} muted={true} id="video" />
-        <canvas ref={canvasRef} style={{ display: "none" }} />
+        {/* <canvas ref={canvasRef} style={{ display: "none" }} /> */}
       </div>
 
       {/* <Snackbar
