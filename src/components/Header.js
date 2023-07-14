@@ -35,7 +35,10 @@ function Head() {
                 features ? (
                   <Nav.Link>
                     <Link to={routes.DETECT} className="head_navlink">
-                      Take Attendance
+                      Check In
+                    </Link>
+                    <Link to={routes.DETECT} className="head_navlink">
+                    &nbsp;&nbsp;&nbsp; Check Out
                     </Link>
                     <Link to={routes.LEAVE} className="head_navlink">
                      &nbsp;&nbsp;&nbsp; Leave
