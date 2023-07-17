@@ -18,15 +18,17 @@ function Signin() {
       User : a,
       apDate : b,
       Remarks : c
-    }).then(function(result) {
-      alert('Successfully applied');
     })
+
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(name,apDate, Remarks);
    submit(name,apDate, Remarks);
+   alert("Successfully Insert Record");
+   setDate('');
+   setRemarks('');
   };
 
   return (
